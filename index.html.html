@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Aeboboku Sayangg dari Apun 😘🥳</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> 
+</head>
+<body style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb1RPfAAJHJ26HWTfTxSC1L_wTc1CoDn4j9g&s);" 
+      class="flex justify-center h-screen items-center">
+  
+<div class="bg-white border px-10 py-8 border-4 border-gray-300 shadow-lg shadow-pink-300
+ rounded-xl text-center animate__animated animate__backInDown m-8 w-80" id="kartu">
+    <h1 class="text-3xl">Happy Birthday</h1>
+    <h1 class="text-4xl text-blue-500 font-bold animate__animated animate__pulse animate__infinite">
+        adeboboku tercintaa 🥳❤️🤗
+    </h1>
+    <button id="btnUbah" 
+        class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full animate__animated animate__tada">
+        Pencet ini yangg
+    </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+<script>
+    function tampilkanConfetti() {
+        confetti({
+            particleCount: 150,
+            spread: 80,
+            origin: { y: 0.6 },
+        });
+    }
+
+    let btn = document.getElementById("btnUbah");
+    let kartu = document.getElementById("kartu");
+    let slideIndex = 0;
+
+    const slides = [
+        `Selamat ulang tahun adeboboku 😘, semoga panjang umur, sehat selalu, makin sayang kita.
+        Ini salah satu hadiah kecil dari apunmu, silahkan baca, semoga adeboboku suka 😊.`,
+        `Maaf nah yangg, kadang ndk sengaja saya bikin kau kesal, marah, kadang juga ndk sengaja sakiti 
+        hatimu🥺, tapi di balik itu semua saya sangat sayangkan kau, 
+        kau alasanku untuk terus semangat kejar kesuksessan yang nantinya
+        kita bisa nikmati bersama, jangan pernah bosan-bosan sama saya nah yangg🥹,
+        pesanku, mandi dua kali sehari biar ndk bussu😭 hehehe, saya akan tetap
+        di sampingmu selamanya, 
+        ndk mau kemana-mana, hanya mau di sampingmu,
+        senyummu semangatku, semoga semua impianmu terkabul dan selalu diberikan kebahagiaan ya sayangg ❤️🎉.`,
+        `Senyummu semangatku, kalau saya lagi capek pasti
+        capekku hilang kalau sdh liat senyummu😇, pas saya di laut
+        saya kerja, memang sangat capek tapi pas saya telpon kau, semua 
+        capekku jadi hilang, terimakasih ya sayangg, ingat nah kalau ada masalahmu cerita di saya jangan di pendam
+        🥺, kita sama-sama cari solusinya, dan saya mau bilang terimakasih 
+        sdh ikut terlibat di kehidupanku, maaf untuk sekarang saya blm jadi apa-apa, 
+        tapi saya janji saya akan berhasil dan jadi orang suksess, lalu saya ketemu ibu untuk lamar kau
+        dan buat ko bangga, I Love You Delvy Sri Wulandari/nona arfadan😇❤️, jadi jangan pernah merasa sendiri yaa 🤗💖.`,
+        `"Cinta sejati bukanlah tentang memiliki seseorang yang sempurna, tetapi menerima seseorang dengan segala ketidaksempurnaannya dan tetap memilih untuk tetap bersamanya. 
+        terimakasih sudah memilih dan menetap sama saya sayangg🥹,
+        jangan ketawa baca puisi ku😭" ❤️`,
+        `hanya cinta dan malam yang takkan pernah habis😉, ubur-ubur ikan lele mabar le,
+         saya mohon tetap pertahankan hubungan ini satu sama lain, bagiku kau segalaku, sekali lagi selamat ulang tahun
+         adebobo 🥳 kurangi pa bombe-bombe kita ya, mmmmmmuuuuuuaacchhhh💕`
+    ];
+
+    function ubahKartu() {
+        let buttonText = slideIndex === slides.length - 1 ? "tutup" : "pencet lagi🫠";
+        kartu.innerHTML = `
+            <h1 class="font-semibold text-wrap animate__animated animate__zoomIn">
+                ${slides[slideIndex]}
+            </h1>
+            <h2 class="mt-3 animate__animated animate__fadeIn">-Dari : Afun arfadan-</h2>
+            <button id="btnNext" 
+                class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full animate__animated animate__tada">
+                ${buttonText}
+            </button>
+        `;
+        
+        tampilkanConfetti();
+        document.getElementById("btnNext").addEventListener("click", nextSlide);
+    }
+
+    function nextSlide() {
+        if (slideIndex < slides.length - 1) {
+            slideIndex++;
+            ubahKartu();
+        } else {
+            kartu.innerHTML = `<h1 class='text-3xl font-bold animate__animated animate__zoomIn'>Terima kasih sayangg ❤️</h1>`;
+        }
+    }
+
+    btn.addEventListener("click", ubahKartu);
+</script>
+</body>
+</html>
